@@ -1,20 +1,19 @@
+import { Container } from "./components/Container";
+import { Logo } from "./components/Logo";
+
 import "./styles/theme.css";
 import "./styles/global.css";
-import { Container } from "./components/Container";
-import { Heading } from "./components/Heading";
+import { Menu } from "./components/Menu";
 
 export function App() {
   return (
     <>
-      {/* <div className='container-fluid'> */}
-
       <Container>
-        <Heading>Meu Header</Heading>
+        <Logo />
       </Container>
       <Container>
-        <section>MENU</section>
+        <Menu />
       </Container>
-      {/* </div> */}
     </>
   );
 }
