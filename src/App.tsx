@@ -1,18 +1,20 @@
 import { Container } from "./components/Container";
 import { Logo } from "./components/Logo";
 import { Menu } from "./components/Menu";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import { Countdown } from "./components/Countdown";
 import { DefaultInput } from "./components/DefaultInput";
 import { Cycles } from "./components/Cycles";
 import { DefaultButton } from "./components/DefaultButton";
+import { PlayCircleIcon } from "lucide-react";
+import { Footer } from "./components/Footer";
 
 import "./styles/theme.css";
 import "./styles/global.css";
-import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
 
 export function App() {
   return (
-    <>
+    <ThemeProvider>
       <Container>
         <Logo />
       </Container>
@@ -46,10 +48,13 @@ export function App() {
 
           <div className="formRow">
             <DefaultButton icon={<PlayCircleIcon />} />
-            <DefaultButton icon={<StopCircleIcon />} color="red" />
           </div>
         </form>
       </Container>
-    </>
+
+      <Container>
+        <Footer />
+      </Container>
+    </ThemeProvider>
   );
 }
